@@ -45,7 +45,11 @@ const navLinks = [
 
 const NavbarList = ({ view }) => {
 	const links = navLinks.map(link => (
-		<NavbarItem link={link} view={view} key={link.title.replace(' ', '')} />
+		<NavbarItem
+			link={link}
+			view={view}
+			key={link.title.replace(' ', '-')}
+		/>
 	));
 	return <NavList view={view}>{links}</NavList>;
 };

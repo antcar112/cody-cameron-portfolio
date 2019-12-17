@@ -18,12 +18,7 @@ const NavItem = styled.li`
 const NavbarItem = ({ link, view }) => {
 	return (
 		<NavItem view={view}>
-			<NavbarLink
-				exact
-				to={link.path}
-				view={view}
-				activeClassName="activeNav"
-			>
+			<NavbarLink to={link.path} view={view} activeClassName="activeNav">
 				{link.title}
 			</NavbarLink>
 		</NavItem>
