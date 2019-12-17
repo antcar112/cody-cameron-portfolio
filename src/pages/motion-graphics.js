@@ -3,6 +3,6 @@ import Layout from '../components/layout';
 
 export default () => (
 	<Layout>
-		<h1>HOME PAGE RIGHT HERE</h1>
+		<h1>MOTION</h1>
 	</Layout>
 );

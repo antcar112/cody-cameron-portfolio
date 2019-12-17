@@ -1,0 +1,26 @@
+div.alice-carousel__prev-btn,
+div.alice-carousel__next-btn {
+	padding-bottom: 0px;
+	line-height: 8px;
+}
+div.alice-carousel__prev-btn p.alice-carousel__prev-btn-item,
+div.alice-carousel__next-btn p.alice-carousel__next-btn-item {
+	color: rgba(238, 238, 238, 0.65);
+
+	transition: color 250ms ease-in-out;
+}
+div.alice-carousel__prev-btn p.alice-carousel__prev-btn-item {
+	padding: 5px 25px 5px 50px;
+}
+
+div.alice-carousel__next-btn p.alice-carousel__next-btn-item {
+	padding: 5px 50px 5px 25px;
+}
+div.alice-carousel__prev-btn p.alice-carousel__prev-btn-item:hover,
+div.alice-carousel__next-btn p.alice-carousel__next-btn-item:hover,
+div.alice-carousel__prev-btn p.alice-carousel__prev-btn-item:active,
+div.alice-carousel__next-btn p.alice-carousel__next-btn-item:active,
+div.alice-carousel__prev-btn p.alice-carousel__prev-btn-item:focus,
+div.alice-carousel__next-btn p.alice-carousel__next-btn-item:focus {
+	color: rgba(255, 255, 255, 0.8);
+}
