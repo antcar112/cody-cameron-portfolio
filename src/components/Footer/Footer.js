@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styled from 'styled-components';
 
@@ -18,20 +18,21 @@ const FooterContainer = styled.footer`
 	overflow: hidden;
 `;
 
-export class Footer extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			photos  : [],
-			loading : true
-		};
-	}
+const Footer = () => {
+	let [
+		photos,
+		setPhotos
+	] = useState([]);
+	let [
+		loading,
+		setLoading
+	] = useState(true);
 
-	componentDidMount() {
-		this.fetchPhotos();
-	}
+	useEffect(() => {
+		fetchPhotos();
+	}, []);
 
-	async fetchPhotos() {
+	const fetchPhotos = async () => {
 		let res = await axios.get(INSTA_URL);
 		let resData = res.data.data;
 		let photos = resData.map(p => {
@@ -43,24 +44,22 @@ export class Footer extends Component {
 			};
 			return photo;
 		});
-		this.setState({ photos: photos, loading: false });
-	}
 
-	render() {
-		const { loading, photos } = this.state;
+		setPhotos(photos);
+		setLoading(false);
+	};
 
-		return (
-			<FooterContainer>
-				{loading ? (
-					<SpinnerContainer lightSpinner />
-				) : (
-					<FooterCarousel photos={photos} />
-				)}
-				<SocialList location="footer" />
-				<FooterCopyright />
-			</FooterContainer>
-		);
-	}
-}
+	return (
+		<FooterContainer>
+			{loading ? (
+				<SpinnerContainer lightSpinner />
+			) : (
+				<FooterCarousel photos={photos} />
+			)}
+			<SocialList location="footer" />
+			<FooterCopyright />
+		</FooterContainer>
+	);
+};
 
 export default Footer;

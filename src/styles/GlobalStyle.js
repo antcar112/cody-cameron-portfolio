@@ -42,6 +42,7 @@ h1,
 h2,
 p {
   margin-top: 0;
+  font-weight: 400;
 }
 
 

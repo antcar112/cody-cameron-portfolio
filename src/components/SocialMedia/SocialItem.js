@@ -1,13 +1,11 @@
 import React from 'react';
 
-export default function SocialItem(props) {
-	const { icon, url } = props.site;
+const SocialItem = ({ site: { icon, url } }) => (
+	<li>
+		<a href={url} target="_blank" rel="noopener noreferrer">
+			{icon}
+		</a>
+	</li>
+);
 
-	return (
-		<li>
-			<a href={url} target="_blank" rel="noopener noreferrer">
-				{icon}
-			</a>
-		</li>
-	);
-}
+export default SocialItem;

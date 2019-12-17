@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { media } from '../../utils/media';
 import { MdMenu } from 'react-icons/md';
 import { Link } from 'gatsby';
 
 import SocialList from '../SocialMedia/SocialList';
+import NavbarList from './NavbarList';
+import NavbarDrawer from './NavbarDrawer';
+import FullPageBackground from './FullPageBackground';
 
 const Nav = styled.nav`
 	background-color: ${props => props.theme.color.black};
@@ -85,117 +88,34 @@ const LogoContainer = styled.div`
 	}
 `;
 
-const NavbarList = styled.ul`
-	margin: 0;
-	list-style: none;
-	display: flex;
-	padding: 0 20px;
-`;
+const Navbar = () => {
+	let [
+		showDrawer,
+		setShowDrawer
+	] = useState(false);
 
-const NavbarLink = styled(Link)`
-
-	text-transform: lowercase;
-	text-decoration: none;
-	font-size: 16px;
-	transition: background-color ${props => props.theme.transition},
-		color ${props => props.theme.transition};
-	display: block;
-	color: ${props => props.theme.color.white};
-	padding: 0 0.8rem;
-	position: relative;
-
-	height: ${props => props.theme.navHeight};
-	line-height: ${props => props.theme.navHeight};
-
-	&:hover,
-	&:active,
-	&:focus {
-		text-decoration: none;
-		color: ${props => props.theme.color.gold};
+	function toggleDrawer() {
+		setShowDrawer(!showDrawer);
 	}
 
-	&.activeNav {
-		&::after {
-			transform: scaleX(1);
-		}
-	}
-
-	&:hover::after,
-	&:active::after,
-	&:focus::after {
-		transform: scaleX(1);
-		transition: transform ${props => props.theme.transition};
-	}
-
-	&::after {
-		content: '';
-		left: 0;
-		right: 0;
-		bottom: 0;
-		height: 5px;
-		background-color: ${props => props.theme.color.gold};
-		position: absolute;
-		transform: scaleX(0);
-		transform-origin: 50%;
-	}
-
-`;
-
-const Navbar = () => (
-	<Nav>
-		<NavbarOuterContainer>
-			<NavbarHamburger>
-				<MdMenu className="Navbar__hamburger-icon" />
-			</NavbarHamburger>
-			<LogoContainer>
-				<Link to="/">Cody Cameron</Link>
-			</LogoContainer>
-			<NavBarDesktopContainer>
-				<NavbarList>
-					<li>
-						<NavbarLink to="/" activeClassName="activeNav">
-							Home
-						</NavbarLink>
-					</li>
-					<li>
-						<NavbarLink
-							to="/shed-designs"
-							activeClassName="activeNav"
-						>
-							Shed Designs
-						</NavbarLink>
-					</li>
-					<li>
-						<NavbarLink
-							to="/motion-graphics"
-							activeClassName="activeNav"
-						>
-							Motion Graphics
-						</NavbarLink>
-					</li>
-					<li>
-						<NavbarLink
-							to="/graphic-design"
-							activeClassName="activeNav"
-						>
-							Graphic Design
-						</NavbarLink>
-					</li>
-					<li>
-						<NavbarLink to="/about" activeClassName="activeNav">
-							About
-						</NavbarLink>
-					</li>
-					<li>
-						<NavbarLink to="/contact" activeClassName="activeNav">
-							Contact
-						</NavbarLink>
-					</li>
-				</NavbarList>
-				<SocialList location="nav" />
-			</NavBarDesktopContainer>
-		</NavbarOuterContainer>
-	</Nav>
-);
+	return (
+		<Nav>
+			<NavbarOuterContainer>
+				<NavbarHamburger onClick={toggleDrawer}>
+					<MdMenu className="Navbar__hamburger-icon" />
+				</NavbarHamburger>
+				<LogoContainer>
+					<Link to="/">Cody Cameron</Link>
+				</LogoContainer>
+				<NavBarDesktopContainer>
+					<NavbarList view="desktop" />
+					<SocialList location="nav" />
+				</NavBarDesktopContainer>
+			</NavbarOuterContainer>
+			<NavbarDrawer showDrawer={showDrawer} hideDrawer={toggleDrawer} />
+			<FullPageBackground show={showDrawer} hideDrawer={toggleDrawer} />
+		</Nav>
+	);
+};
 
 export default Navbar;

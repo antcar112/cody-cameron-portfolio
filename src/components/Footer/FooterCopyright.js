@@ -24,7 +24,7 @@ const Copyright = styled.div`
 	}
 `;
 
-export default function FooterCopyright() {
+const FooterCopyright = () => {
 	const year = new Date().getFullYear();
 	return (
 		<Copyright>
@@ -32,4 +32,6 @@ export default function FooterCopyright() {
 			<span>Site Developed by Anthony Caron</span>
 		</Copyright>
 	);
-}
+};
+
+export default FooterCopyright;

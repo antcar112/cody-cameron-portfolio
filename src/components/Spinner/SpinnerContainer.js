@@ -37,7 +37,9 @@ const SpinnerDiv = styled.div`
 	justify-content: center;
 `;
 
-export default function SpinnerContainer(props) {
+const SpinnerContainer = props => {
 	const spinner = props.lightSpinner ? <SpinnerLight /> : <SpinnerDark />;
 	return <SpinnerDiv>{spinner}</SpinnerDiv>;
-}
+};
+
+export default SpinnerContainer;
