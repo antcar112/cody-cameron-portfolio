@@ -8,8 +8,8 @@ import SocialList from '../SocialMedia/SocialList';
 import FooterCopyright from './FooterCopyright';
 
 // Go here for access token https://instagram.pixelunion.net/
-const INSTA_URL = `https://api.instagram.com/v1/users/self/media/recent/?access_token=${process
-	.env.INSTA_ACCESS_TOKEN}`;
+const INSTA_KEY = process.env.INSTA_ACCESS_TOKEN;
+const INSTA_URL = `https://api.instagram.com/v1/users/self/media/recent/?access_token=${INSTA_KEY}`;
 
 const FooterContainer = styled.footer`
 	background-color: ${props => props.theme.color.black};
@@ -56,6 +56,7 @@ const Footer = () => {
 			) : (
 				<FooterCarousel photos={photos} />
 			)}
+			<p style={{ color: 'white' }}>{INSTA_KEY}</p>
 			<SocialList location="footer" />
 			<FooterCopyright />
 		</FooterContainer>
