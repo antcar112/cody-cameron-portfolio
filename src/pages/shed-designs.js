@@ -1,8 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/layout';
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import PageHeader from '../components/PageHeader/PageHeader';
 import shedDesignsHeaderImage from '../images/shed-designs/paint.jpg';
 import PreviousProjects from '../components/ShedDesigns/PreviousProjects';

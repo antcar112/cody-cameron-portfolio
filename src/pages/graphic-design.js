@@ -1,7 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import Layout from '../components/layout';
 import PageHeader from '../components/PageHeader/PageHeader';
 import HoverImageGrid from '../components/HoverImageGrid/HoverImageGrid';

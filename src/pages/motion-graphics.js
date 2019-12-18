@@ -1,8 +1,6 @@
 import React from 'react';
 import Layout from '../components/layout';
 import { graphql } from 'gatsby';
-import 'bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import PageHeader from '../components/PageHeader/PageHeader';
 import designHeaderImage from '../images/graphic-design/design-alexandru-acea.jpg';
 
