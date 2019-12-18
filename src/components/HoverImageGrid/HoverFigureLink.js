@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { media } from '../../utils/media';
 
 const Fig = styled.figure`
 	margin: 0 auto;
 	overflow: hidden;
 	position: relative;
+	max-width: 450px;
 
 	&:hover .image-div {
 		transform: scale(1.03);
@@ -22,6 +22,7 @@ const Fig = styled.figure`
 
 const ImageDiv = styled.div`
 	width: 100%;
+
 	height: 100%;
 
 	transition: transform 150ms ease-in;
@@ -62,7 +63,10 @@ const HoverFigureLink = ({ content, parentPage }) => (
 				</div>
 			</TextDiv>
 			<ImageDiv className="image-div">
-				<img src={content.thumbnail.file.url} alt={content.title} />
+				<img
+					src={`${content.thumbnail.file.url}?fit=fill&w=450&h=450`}
+					alt={content.title}
+				/>
 			</ImageDiv>
 		</Fig>
 	</Link>

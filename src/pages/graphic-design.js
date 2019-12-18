@@ -7,7 +7,6 @@ import PageHeader from '../components/PageHeader/PageHeader';
 import HoverImageGrid from '../components/HoverImageGrid/HoverImageGrid';
 
 import designHeaderImage from '../images/graphic-design/design-alexandru-acea.jpg';
-import { graphicDesign } from '../content/graphic-design';
 
 export const query = graphql`
 	{

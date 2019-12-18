@@ -49,7 +49,6 @@ export default ({ data }) => (
 	<Layout>
 		<PageHeader title="Shed Designs" headerImage={shedDesignsHeaderImage} />
 		<PreviousProjects shoes={data.shoes.nodes} />
-
 		<ShedDesignsAbout content={data.events.nodes} />
 		<PastDeliveries artists={data.artists.nodes} />
 	</Layout>
