@@ -40,6 +40,7 @@ const MotionTemplate = ({ data }) => {
 						src={video.file.url}
 						style={{ width: '100%' }}
 						controls
+						muted
 					/>
 
 					<SectionSubtitle>{video.title}</SectionSubtitle>

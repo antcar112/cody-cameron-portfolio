@@ -51,8 +51,6 @@ const Footer = ({ insta }) => {
 			INSTA_URL
 		]
 	);
-
-	console.log('footer here: ', insta);
 	return (
 		<FooterContainer>
 			{loading ? (
