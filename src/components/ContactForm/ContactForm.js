@@ -7,12 +7,12 @@ const FormGroup = styled.div`
 	display: block;
 	font-size: 16px;
 	font-weight: 400;
-	/* height: 70px; */
 	line-height: 24px;
 	margin-bottom: 16px;
 	text-align: left;
 	text-size-adjust: 100%;
-	width: 680px;
+	max-width: 680px;
+	width: 100%;
 	font-family: ${props => props.theme.font.body};
 
 	&::before,
@@ -42,7 +42,8 @@ const FormControlStyles = css`
 	transition-duration: 0.15s, 0.15s;
 	transition-property: border-color, box-shadow;
 	transition-timing-function: ease-in-out, ease-in-out;
-	width: 680px;
+	max-width: 680px;
+	width: 100%;
 
 	&:focus {
 		border: 1px solid rgb(205, 164, 50);

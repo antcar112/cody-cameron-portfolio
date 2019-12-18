@@ -55,7 +55,11 @@ const MotionTemplate = ({ data }) => {
 					<img
 						src={gif.file.url}
 						alt={gif.title}
-						style={{ width: '100%' }}
+						style={{
+							height    : '38px',
+							width     : '100%',
+							objectFit : 'cover'
+						}}
 					/>
 					{/* <SectionSubtitle>{gif.title}</SectionSubtitle> */}
 				</div>
