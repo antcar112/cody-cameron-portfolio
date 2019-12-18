@@ -74,7 +74,7 @@ const ContactForm = () => (
 				type="name"
 				id="name"
 				aria-describedby="name"
-				placeholder="Enter name"
+				placeholder="Enter your name"
 			/>
 		</FormGroup>
 		<FormGroup>
@@ -92,7 +92,7 @@ const ContactForm = () => (
 				type="subject"
 				id="subject"
 				aria-describedby="subject"
-				placeholder="Enter email subject"
+				placeholder="Enter your email subject"
 			/>
 		</FormGroup>
 

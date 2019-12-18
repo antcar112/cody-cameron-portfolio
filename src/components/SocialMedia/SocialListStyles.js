@@ -73,6 +73,22 @@ const FooterStyles = css`
 	}
 `;
 
+const ContactPageStyles = css`
+	& li {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 0;
+
+		& a {
+			color: ${props => props.theme.color.black};
+			font-size: 2.2em;
+			padding: 0.5em 1em;
+			margin: 0;
+		}
+	}
+`;
+
 export const List = styled.ul`
 	margin: 0;
 	padding: 0;
@@ -97,4 +113,5 @@ export const List = styled.ul`
 	${props => props.location === 'nav-drawer' && NavDrawerStyles};
 	${props => props.location === 'footer' && FooterStyles};
 	${props => props.location === 'nav' && NavStyles};
+	${props => props.location === 'contact-page' && ContactPageStyles};
 `;
