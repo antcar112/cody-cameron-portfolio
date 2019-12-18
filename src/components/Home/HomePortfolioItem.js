@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 import PortfolioItem from './PortfolioItem';
 import { ArticleTitle, ArticleSubtitle, Text } from '../Text/Text';
 import { BtnInnerLink } from '../Button/Button';
@@ -10,7 +11,7 @@ const HomePortfolioItem = ({ section, index }) => (
 		<img src={section.image} alt={section.title} />
 		<Text>{section.description}</Text>
 
-		<BtnInnerLink to={section.link}>+ See More</BtnInnerLink>
+		<BtnInnerLink to={`/${section.link}/`}>+ See More</BtnInnerLink>
 	</PortfolioItem>
 );
 

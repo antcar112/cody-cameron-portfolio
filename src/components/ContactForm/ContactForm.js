@@ -104,7 +104,10 @@ const ContactForm = () => (
 				placeholder="Enter your message"
 			/>
 		</FormGroup>
-		<Btn type="submit" style={{ display: 'block', width: '100%' }}>
+		<Btn
+			type="submit"
+			style={{ display: 'block', width: '100%', fontSize: '16px' }}
+		>
 			Send Message
 		</Btn>
 	</form>
