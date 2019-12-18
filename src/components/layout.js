@@ -5,14 +5,14 @@ import Theme from '../styles/Theme';
 import Navbar from './Navbar/Navbar.js';
 import Footer from './Footer/Footer.js';
 
-export default ({ children }) => {
+export default ({ insta, children }) => {
 	return (
 		<ThemeProvider theme={Theme}>
 			<GlobalStyle />
 			<Fragment>
 				<Navbar />
 				<main>{children}</main>
-				<Footer />
+				<Footer insta={insta} />
 			</Fragment>
 		</ThemeProvider>
 	);

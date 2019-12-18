@@ -23,10 +23,16 @@ export const query = graphql`
 				description
 			}
 		}
+		site {
+			siteMetadata {
+				instaAPI
+			}
+		}
 	}
 `;
 
-const GraphicDesignTemplate = ({ data: { graphic } }) => {
+const GraphicDesignTemplate = ({ data }) => {
+	const { graphic } = data;
 	let imagesFull = '';
 	if (graphic.imagesFullWidth) {
 		imagesFull = graphic.imagesFullWidth.map(image => {
@@ -58,7 +64,7 @@ const GraphicDesignTemplate = ({ data: { graphic } }) => {
 		});
 	}
 	return (
-		<Layout>
+		<Layout insta={data.site.siteMetadata.instaAPI}>
 			<ContentContainer>
 				<SectionTitle style={{ marginBottom: '26px' }}>
 					{graphic.title}

@@ -40,11 +40,16 @@ export const query = graphql`
 				}
 			}
 		}
+		site {
+			siteMetadata {
+				instaAPI
+			}
+		}
 	}
 `;
 
 export default ({ data }) => (
-	<Layout>
+	<Layout insta={data.site.siteMetadata.instaAPI}>
 		<PageHeader title="Shed Designs" headerImage={shedDesignsHeaderImage} />
 		<PreviousProjects shoes={data.shoes.nodes} />
 		<ShedDesignsAbout content={data.events.nodes} />

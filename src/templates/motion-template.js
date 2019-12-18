@@ -21,10 +21,16 @@ export const query = graphql`
 				}
 			}
 		}
+		site {
+			siteMetadata {
+				instaAPI
+			}
+		}
 	}
 `;
 
-const MotionTemplate = ({ data: { motion } }) => {
+const MotionTemplate = ({ data }) => {
+	const { motion } = data;
 	let videos = '';
 	if (motion.videos) {
 		videos = motion.videos.map(video => {
@@ -57,7 +63,7 @@ const MotionTemplate = ({ data: { motion } }) => {
 		});
 	}
 	return (
-		<Layout>
+		<Layout insta={data.site.siteMetadata.instaAPI}>
 			<ContentContainer>
 				<SectionTitle style={{ marginBottom: '26px' }}>
 					{motion.title}

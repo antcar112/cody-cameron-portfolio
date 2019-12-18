@@ -7,10 +7,6 @@ import SpinnerContainer from '../Spinner/SpinnerContainer';
 import SocialList from '../SocialMedia/SocialList';
 import FooterCopyright from './FooterCopyright';
 
-// Go here for access token https://instagram.pixelunion.net/
-const INSTA_KEY = process.env.INSTA_ACCESS_TOKEN;
-const INSTA_URL = `https://api.instagram.com/v1/users/self/media/recent/?access_token=${INSTA_KEY}`;
-
 const FooterContainer = styled.footer`
 	background-color: ${props => props.theme.color.black};
 	padding-top: 60px;
@@ -18,7 +14,7 @@ const FooterContainer = styled.footer`
 	overflow: hidden;
 `;
 
-const Footer = () => {
+const Footer = ({ insta }) => {
 	let [
 		photos,
 		setPhotos
@@ -28,27 +24,35 @@ const Footer = () => {
 		setLoading
 	] = useState(true);
 
-	useEffect(() => {
-		fetchPhotos();
-	}, []);
+	// Go here for access token https://instagram.pixelunion.net/
+	const INSTA_URL = `https://api.instagram.com/v1/users/self/media/recent/?access_token=${insta}`;
 
-	const fetchPhotos = async () => {
-		let res = await axios.get(INSTA_URL);
-		let resData = res.data.data;
-		let photos = resData.map(p => {
-			const photo = {
-				id      : p.id,
-				caption : p.caption ? p.caption.text : '',
-				image   : p.images.low_resolution.url,
-				url     : p.link
+	useEffect(
+		() => {
+			const fetchPhotos = async () => {
+				let res = await axios.get(INSTA_URL);
+				let resData = res.data.data;
+				let photos = resData.map(p => {
+					const photo = {
+						id      : p.id,
+						caption : p.caption ? p.caption.text : '',
+						image   : p.images.low_resolution.url,
+						url     : p.link
+					};
+					return photo;
+				});
+
+				setPhotos(photos);
+				setLoading(false);
 			};
-			return photo;
-		});
+			fetchPhotos();
+		},
+		[
+			INSTA_URL
+		]
+	);
 
-		setPhotos(photos);
-		setLoading(false);
-	};
-
+	console.log('footer here: ', insta);
 	return (
 		<FooterContainer>
 			{loading ? (
@@ -56,7 +60,6 @@ const Footer = () => {
 			) : (
 				<FooterCarousel photos={photos} />
 			)}
-			<p style={{ color: 'white' }}>{INSTA_KEY}</p>
 			<SocialList location="footer" />
 			<FooterCopyright />
 		</FooterContainer>

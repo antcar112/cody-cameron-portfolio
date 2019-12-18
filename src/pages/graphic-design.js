@@ -19,11 +19,16 @@ export const query = graphql`
 				slug
 			}
 		}
+		site {
+			siteMetadata {
+				instaAPI
+			}
+		}
 	}
 `;
 
 export default ({ data }) => (
-	<Layout>
+	<Layout insta={data.site.siteMetadata.instaAPI}>
 		<PageHeader title="Graphic Design" headerImage={designHeaderImage} />
 		<HoverImageGrid
 			content={data.graphics.nodes}
