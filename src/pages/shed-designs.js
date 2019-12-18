@@ -7,6 +7,15 @@ import PreviousProjects from '../components/ShedDesigns/PreviousProjects';
 import ShedDesignsAbout from '../components/ShedDesigns/ShedDesignsAbout';
 import PastDeliveries from '../components/ShedDesigns/PastDeliveries';
 
+export default ({ data }) => (
+	<Layout insta={data.site.siteMetadata.instaAPI}>
+		<PageHeader title="Shed Designs" headerImage={shedDesignsHeaderImage} />
+		<PreviousProjects shoes={data.shoes.nodes} />
+		<ShedDesignsAbout content={data.events.nodes} />
+		<PastDeliveries artists={data.artists.nodes} />
+	</Layout>
+);
+
 export const query = graphql`
 	{
 		shoes: allContentfulShoe {
@@ -47,12 +56,3 @@ export const query = graphql`
 		}
 	}
 `;
-
-export default ({ data }) => (
-	<Layout insta={data.site.siteMetadata.instaAPI}>
-		<PageHeader title="Shed Designs" headerImage={shedDesignsHeaderImage} />
-		<PreviousProjects shoes={data.shoes.nodes} />
-		<ShedDesignsAbout content={data.events.nodes} />
-		<PastDeliveries artists={data.artists.nodes} />
-	</Layout>
-);

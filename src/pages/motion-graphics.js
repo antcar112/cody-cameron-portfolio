@@ -6,6 +6,16 @@ import designHeaderImage from '../images/graphic-design/design-alexandru-acea.jp
 
 import HoverImageGrid from '../components/HoverImageGrid/HoverImageGrid';
 
+export default ({ data }) => (
+	<Layout insta={data.site.siteMetadata.instaAPI}>
+		<PageHeader title="Motion Graphics" headerImage={designHeaderImage} />
+		<HoverImageGrid
+			content={data.motionGraphics.nodes}
+			parentPage="motion-graphics"
+		/>
+	</Layout>
+);
+
 export const query = graphql`
 	{
 		motionGraphics: allContentfulMotionGraphics {
@@ -26,13 +36,3 @@ export const query = graphql`
 		}
 	}
 `;
-
-export default ({ data }) => (
-	<Layout insta={data.site.siteMetadata.instaAPI}>
-		<PageHeader title="Motion Graphics" headerImage={designHeaderImage} />
-		<HoverImageGrid
-			content={data.motionGraphics.nodes}
-			parentPage="motion-graphics"
-		/>
-	</Layout>
-);

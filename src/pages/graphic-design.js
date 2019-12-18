@@ -6,6 +6,16 @@ import HoverImageGrid from '../components/HoverImageGrid/HoverImageGrid';
 
 import designHeaderImage from '../images/graphic-design/design-alexandru-acea.jpg';
 
+export default ({ data }) => (
+	<Layout insta={data.site.siteMetadata.instaAPI}>
+		<PageHeader title="Graphic Design" headerImage={designHeaderImage} />
+		<HoverImageGrid
+			content={data.graphics.nodes}
+			parentPage="graphic-design"
+		/>
+	</Layout>
+);
+
 export const query = graphql`
 	{
 		graphics: allContentfulGraphicDesign {
@@ -26,13 +36,3 @@ export const query = graphql`
 		}
 	}
 `;
-
-export default ({ data }) => (
-	<Layout insta={data.site.siteMetadata.instaAPI}>
-		<PageHeader title="Graphic Design" headerImage={designHeaderImage} />
-		<HoverImageGrid
-			content={data.graphics.nodes}
-			parentPage="graphic-design"
-		/>
-	</Layout>
-);
