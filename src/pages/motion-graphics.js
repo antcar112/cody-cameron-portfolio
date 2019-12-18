@@ -8,7 +8,7 @@ import HoverImageGrid from '../components/HoverImageGrid/HoverImageGrid';
 
 export const query = graphql`
 	{
-		motionGraphics: allContentfulMotion {
+		motionGraphics: allContentfulMotionGraphics {
 			nodes {
 				title
 				thumbnail {

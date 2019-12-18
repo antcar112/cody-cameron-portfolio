@@ -6,8 +6,11 @@ import { graphql } from 'gatsby';
 
 export const query = graphql`
 	query($slug: String!) {
-		motion: contentfulMotion(slug: { eq: $slug }) {
+		motion: contentfulMotionGraphics(slug: { eq: $slug }) {
 			title
+			description {
+				description
+			}
 			videos {
 				title
 				file {
@@ -15,7 +18,6 @@ export const query = graphql`
 				}
 			}
 			gifs {
-				title
 				file {
 					url
 				}
@@ -62,7 +64,6 @@ const MotionTemplate = ({ data }) => {
 							objectFit : 'cover'
 						}}
 					/>
-					{/* <SectionSubtitle>{gif.title}</SectionSubtitle> */}
 				</div>
 			);
 		});
@@ -73,6 +74,9 @@ const MotionTemplate = ({ data }) => {
 				<SectionTitle style={{ marginBottom: '26px' }}>
 					{motion.title}
 				</SectionTitle>
+				<p style={{ marginBottom: '30px' }}>
+					{motion.description.description}
+				</p>
 				{videos}
 			</ContentContainer>
 			<div style={{ marginBottom: '60px', width: '100%' }}>{gifs}</div>

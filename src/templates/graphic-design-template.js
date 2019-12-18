@@ -8,19 +8,20 @@ export const query = graphql`
 	query($slug: String!) {
 		graphic: contentfulGraphicDesign(slug: { eq: $slug }) {
 			title
+			description {
+				description
+			}
 			imagesFullWidth {
 				file {
 					url
 				}
 				title
-				description
 			}
 			images {
 				file {
 					url
 				}
 				title
-				description
 			}
 		}
 		site {
@@ -69,6 +70,9 @@ const GraphicDesignTemplate = ({ data }) => {
 				<SectionTitle style={{ marginBottom: '26px' }}>
 					{graphic.title}
 				</SectionTitle>
+				<p style={{ marginBottom: '30px' }}>
+					{graphic.description.description}
+				</p>
 				<div
 					style={{
 						display             : 'grid',

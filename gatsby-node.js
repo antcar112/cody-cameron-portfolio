@@ -1,24 +1,24 @@
 exports.createPages = async ({ actions, graphql, reporter }) => {
 	const result = await graphql(`
-    {
-        allContentfulMotion {
-            nodes {
-                slug
-            }
+	{
+	    allContentfulMotionGraphics {
+	        nodes {
+	            slug
+	        }
 		}
-		        allContentfulGraphicDesign {
-            nodes {
-                slug
-            }
-        }
-    }
-    `);
+		allContentfulGraphicDesign {
+	        nodes {
+	            slug
+	        }
+	    }
+	}
+	`);
 
 	if (result.errors) {
 		reporter.panic('Error loading lessons', JSON.stringify(result.errors));
 	}
 
-	result.data.allContentfulMotion.nodes.forEach(motion => {
+	result.data.allContentfulMotionGraphics.nodes.forEach(motion => {
 		actions.createPage({
 			path      : `/motion-graphics/${motion.slug}/`,
 			component : require.resolve('./src/templates/motion-template.js'),
