@@ -61,7 +61,10 @@ export class Figure extends Component {
 
 		return (
 			<Fig className={figureClasses}>
-				<img src={content.image} alt={content.title} />
+				<img
+					src={`${content.image}?fit=fill&w=450&h=450`}
+					alt={content.title}
+				/>
 
 				{showTitle && <FigTitle>{content.title}</FigTitle>}
 				{showSubtitle && <FigSubtitle>{content.subtitle}</FigSubtitle>}

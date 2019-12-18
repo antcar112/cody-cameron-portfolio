@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import PortfolioItem from './PortfolioItem';
 import { ArticleTitle, ArticleSubtitle, Text } from '../Text/Text';
 import { BtnInnerLink } from '../Button/Button';
