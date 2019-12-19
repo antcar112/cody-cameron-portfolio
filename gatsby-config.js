@@ -4,10 +4,10 @@ require('dotenv').config({
 
 module.exports = {
 	siteMetadata : {
-		title    : `Cody Cameron`,
+		title       : `Cody Cameron`,
 		// siteUrl: `https://www.gatsbyjs.org`,
-		// description: `Blazing fast modern site generator for React`,
-		instaAPI : process.env.INSTA_ACCESS_TOKEN
+		description : `Portfolio website for artist Cody Cameron`,
+		instaAPI    : process.env.INSTA_ACCESS_TOKEN
 	},
 	plugins      : [
 		`gatsby-plugin-styled-components`,

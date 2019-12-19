@@ -28,16 +28,15 @@ img {
 
 body {
   margin: 0;
-  font-family: ${props => props.theme.font.body}
+  font-family: ${props => props.theme.font.body};
   background-color: $white;
   font-size: 16px;
 }
 
-/* body > tr { display: table !important;} */
-
 main {
   padding-top: 60px;
 }
+
 h1,
 h2,
 p {
@@ -45,18 +44,7 @@ p {
   font-weight: 400;
 }
 
-
-
 p, nav a, aside a, a, span, footer, header, div {
   font-family: ${props => props.theme.font.body}
 }
-form,
-form .form-group,
-form .form-group label,
-form .form-group input.form-control,
-form .form-group textarea.form-control,
-form button.btn {
-  font-family: ${props => props.theme.font.body};
-}
-
 `;

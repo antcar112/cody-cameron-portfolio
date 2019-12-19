@@ -21,23 +21,4 @@ export default styled.div`
 	${media.down.xs} {
 		width: 100%;
 	}
-
-	/* Colors */
-
-	/* background-color: olive;
-	${media.down.xl} {
-		background-color: pink;
-	}
-	${media.down.lg} {
-		background-color: red;
-	}
-	${media.down.md} {
-		background-color: green;
-	}
-	${media.down.sm} {
-		background-color: yellow;
-	}
-	${media.down.xs} {
-		background-color: blue;
-	} */
 `;

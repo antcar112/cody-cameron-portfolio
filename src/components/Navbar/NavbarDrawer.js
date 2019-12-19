@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+
+import { media } from '../../utils/media';
+
 import NavbarList from './NavbarList';
 import SocialList from '../SocialMedia/SocialList';
-import { media } from '../../utils/media';
 
 import { MdChevronLeft } from 'react-icons/md';
 
@@ -16,7 +18,6 @@ const NavDrawer = styled.nav`
 	width: 300px;
 	transition: transform ${props => props.theme.transition};
 	display: none;
-
 	transform: ${props => props.show && 'translate(300px, 0)'};
 
 	${media.down.lg} {

@@ -15,3 +15,6 @@ The following tools were used to develop this project:
 * [Axios](https://github.com/axios/axios)
 * [React Alice Carousel](https://www.npmjs.com/package/react-alice-carousel)
 * [React Icons](https://react-icons.netlify.com/#/)
+
+## Contact
+Built by [Anthony Caron](https://github.com/antcar112) - Feel free to contact me. 

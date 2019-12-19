@@ -4,33 +4,30 @@ import freelance from '../images/home/freelance.jpg';
 
 export const homePortfolio = [
 	{
-		id          : 1,
+		id          : 'shed-designs',
 		title       : 'Shed Designs',
 		subtitle    : 'Creative Coordinator/Head Artist',
 		description :
 			'The First Section - Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum aliquid nisi laboriosam possimus esse ratione perspiciatis vitae voluptas?',
 		image       : shedDesigns,
-		link        : 'shed-designs',
-		displayed   : true
+		link        : 'shed-designs'
 	},
 	{
-		id          : 2,
+		id          : 'motion-graphics',
 		title       : 'Motion Graphics Coordinator',
 		subtitle    : 'Langley Events Centre',
 		description :
 			'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum aliquid nisi laboriosam possimus esse ratione perspiciatis vitae voluptas?',
 		image       : lec,
-		link        : 'motion-graphics',
-		displayed   : true
+		link        : 'motion-graphics'
 	},
 	{
-		id          : 3,
+		id          : 'graphic-design',
 		title       : 'Freelance Graphic Design',
 		subtitle    : 'Lorem ipsum dolor sit amet.',
 		description :
 			'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum aliquid nisi laboriosam possimus esse ratione perspiciatis vitae voluptas?',
 		image       : freelance,
-		link        : 'graphic-design',
-		displayed   : true
+		link        : 'graphic-design'
 	}
 ];
