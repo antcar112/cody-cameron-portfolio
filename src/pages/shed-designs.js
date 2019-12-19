@@ -1,14 +1,18 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+
+import Head from '../components/Head/Head';
 import Layout from '../components/layout';
 import PageHeader from '../components/PageHeader/PageHeader';
-import shedDesignsHeaderImage from '../images/shed-designs/paint.jpg';
 import PreviousProjects from '../components/ShedDesigns/PreviousProjects';
 import ShedDesignsAbout from '../components/ShedDesigns/ShedDesignsAbout';
 import PastDeliveries from '../components/ShedDesigns/PastDeliveries';
 
+import shedDesignsHeaderImage from '../images/shed-designs/paint.jpg';
+
 export default ({ data }) => (
 	<Layout insta={data.site.siteMetadata.instaAPI}>
+		<Head>Shed Designs</Head>
 		<PageHeader title="Shed Designs" headerImage={shedDesignsHeaderImage} />
 		<PreviousProjects shoes={data.shoes.nodes} />
 		<ShedDesignsAbout content={data.events.nodes} />

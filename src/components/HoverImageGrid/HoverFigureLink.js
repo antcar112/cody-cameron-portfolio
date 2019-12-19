@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
 
+import { media } from '../../utils/media';
+
 const Fig = styled.figure`
 	margin: 0 auto;
 	overflow: hidden;
@@ -17,6 +19,19 @@ const Fig = styled.figure`
 	&:hover .desc-div span {
 		opacity: 1;
 		transition: opacity 200ms ease-in-out 100ms;
+	}
+`;
+
+const FigCap = styled.figcaption`
+	display: none;
+	padding: 5px 0 10px;
+	font-size: 20px;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+
+	${media.down.md} {
+		display: block;
 	}
 `;
 
@@ -55,7 +70,10 @@ const TextDiv = styled.div`
 `;
 
 const HoverFigureLink = ({ content, parentPage }) => (
-	<Link to={`/${parentPage}/${content.slug}`}>
+	<Link
+		to={`/${parentPage}/${content.slug}`}
+		style={{ textDecoration: 'none' }}
+	>
 		<Fig>
 			<TextDiv className="text-div">
 				<div className="title-div">
@@ -69,6 +87,7 @@ const HoverFigureLink = ({ content, parentPage }) => (
 				/>
 			</ImageDiv>
 		</Fig>
+		<FigCap>{content.title}</FigCap>
 	</Link>
 );
 

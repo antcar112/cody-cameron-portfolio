@@ -15,7 +15,7 @@ export const HeroContainer = styled.div`
 `;
 
 export const HeroTitleWrapper = styled.div`
-	height: 90%;
+	height: 85%;
 	width: 80%;
 	margin: 0 auto;
 	display: flex;

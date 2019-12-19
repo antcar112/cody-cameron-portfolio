@@ -1,13 +1,16 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+
+import Head from '../components/Head/Head';
 import Layout from '../components/layout';
 import Hero from '../components/Home/Hero';
 import HomePortfolioList from '../components/Home/HomePortfolioList';
 import HomeContact from '../components/Home/HomeContact';
-import { graphql } from 'gatsby';
 
 export default ({ data }) => {
 	return (
 		<Layout insta={data.site.siteMetadata.instaAPI}>
+			<Head>Home</Head>
 			<Hero />
 			<HomePortfolioList />
 			<HomeContact />

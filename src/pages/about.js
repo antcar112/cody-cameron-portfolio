@@ -2,9 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
+import { media } from '../utils/media';
+
+import Head from '../components/Head/Head';
 import Layout from '../components/layout';
 import ContentContainer from '../components/ContentContainer/ContentContainer';
 import PageHeader from '../components/PageHeader/PageHeader';
+
 import granville from '../images/about/granville.jpg';
 import nike from '../images/about/nike.jpg';
 import standingStreet from '../images/about/standing-street.jpg';
@@ -12,16 +16,21 @@ import standingStreet from '../images/about/standing-street.jpg';
 const AboutPara = styled.p`
 	line-height: 1.8em;
 	margin-bottom: 2.5em;
+
+	${media.down.xs} {
+		margin: 0 20px 2.5em;
+	}
 `;
 
 const ImageContainer = styled.div`
 	display: flex;
 	justify-content: center;
-	margin-bottom: 2.5em;
+	margin-bottom: 2em;
 `;
 
 export default ({ data }) => (
 	<Layout insta={data.site.siteMetadata.instaAPI}>
+		<Head>About</Head>
 		<PageHeader title="About" headerImage={granville} />
 		<ContentContainer>
 			<ImageContainer>

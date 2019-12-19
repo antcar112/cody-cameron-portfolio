@@ -2,12 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
+import Head from '../components/Head/Head';
 import Layout from '../components/layout';
 import ContentContainer from '../components/ContentContainer/ContentContainer';
 import ContactForm from '../components/ContactForm/ContactForm';
 import PageHeader from '../components/PageHeader/PageHeader';
-import { SectionTitle, SectionSubtitle } from '../components/Text/Text';
 import SocialList from '../components/SocialMedia/SocialList';
+import { SectionTitle, SectionSubtitle } from '../components/Text/Text';
 
 import designHeaderImage from '../images/graphic-design/design-alexandru-acea.jpg';
 
@@ -20,6 +21,7 @@ const ContactInfo = styled.div`
 
 export default ({ data }) => (
 	<Layout insta={data.site.siteMetadata.instaAPI}>
+		<Head>Contact</Head>
 		<PageHeader title="Contact" headerImage={designHeaderImage} />
 		<ContentContainer>
 			<SectionTitle>Reach Out</SectionTitle>
@@ -28,7 +30,10 @@ export default ({ data }) => (
 				<p>Vancouver, BC</p>
 				<p>Email: sheddesigns1@gmail.com</p>
 				<p>Tel: 778-908-4460</p>
-				<SocialList location="contact-page" />
+				<SocialList
+					location="contact-page"
+					style={{ background: 'red' }}
+				/>
 			</ContactInfo>
 			<SectionTitle>Send a Message</SectionTitle>
 			<ContactForm />

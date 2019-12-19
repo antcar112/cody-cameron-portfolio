@@ -1,8 +1,76 @@
 import React from 'react';
+import { graphql } from 'gatsby';
+import styled from 'styled-components';
+
+import { media } from '../utils/media';
+
+import Head from '../components/Head/Head';
 import Layout from '../components/layout';
 import ContentContainer from '../components/ContentContainer/ContentContainer';
 import { SectionTitle, SectionSubtitle } from '../components/Text/Text';
-import { graphql } from 'gatsby';
+
+const Desc = styled.p`
+	margin: 0 0 30px;
+	${media.down.xs} {
+		margin: 0 20px 30px;
+	}
+`;
+
+const ImageContainer = styled.div`marginBottom: '60px';`;
+const Image = styled.img`width: 100%;`;
+const ImagesFull = styled.div`
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 30px;
+`;
+const ImagesHalf = styled.div`
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 30px;
+
+	${media.down.sm} {
+		grid-template-columns: 1fr;
+	}
+`;
+
+const GraphicDesignTemplate = ({ data }) => {
+	const { graphic } = data;
+	let imagesFull = '';
+	if (graphic.imagesFullWidth) {
+		imagesFull = graphic.imagesFullWidth.map(image => {
+			return (
+				<ImageContainer>
+					<Image src={image.file.url} alt={image.title} />
+					<SectionSubtitle>{image.title}</SectionSubtitle>
+				</ImageContainer>
+			);
+		});
+	}
+	let imagesHalf = '';
+	if (graphic.images) {
+		imagesHalf = graphic.images.map(image => {
+			return (
+				<ImageContainer>
+					<Image src={image.file.url} alt={image.title} />
+					<SectionSubtitle>{image.title}</SectionSubtitle>
+				</ImageContainer>
+			);
+		});
+	}
+	return (
+		<Layout insta={data.site.siteMetadata.instaAPI}>
+			<Head>{graphic.title}</Head>
+			<ContentContainer>
+				<SectionTitle style={{ marginBottom: '26px' }}>
+					{graphic.title}
+				</SectionTitle>
+				<Desc>{graphic.description.description}</Desc>
+				<ImagesFull>{imagesFull}</ImagesFull>
+				<ImagesHalf>{imagesHalf}</ImagesHalf>
+			</ContentContainer>
+		</Layout>
+	);
+};
 
 export const query = graphql`
 	query($slug: String!) {
@@ -31,69 +99,5 @@ export const query = graphql`
 		}
 	}
 `;
-
-const GraphicDesignTemplate = ({ data }) => {
-	const { graphic } = data;
-	let imagesFull = '';
-	if (graphic.imagesFullWidth) {
-		imagesFull = graphic.imagesFullWidth.map(image => {
-			return (
-				<div style={{ marginBottom: '60px' }}>
-					<img
-						src={image.file.url}
-						alt={image.title}
-						style={{ width: '100%' }}
-					/>
-					<SectionSubtitle>{image.title}</SectionSubtitle>
-				</div>
-			);
-		});
-	}
-	let imagesHalf = '';
-	if (graphic.images) {
-		imagesHalf = graphic.images.map(image => {
-			return (
-				<div style={{ marginBottom: '60px' }}>
-					<img
-						src={image.file.url}
-						alt={image.title}
-						style={{ width: '100%' }}
-					/>
-					<SectionSubtitle>{image.title}</SectionSubtitle>
-				</div>
-			);
-		});
-	}
-	return (
-		<Layout insta={data.site.siteMetadata.instaAPI}>
-			<ContentContainer>
-				<SectionTitle style={{ marginBottom: '26px' }}>
-					{graphic.title}
-				</SectionTitle>
-				<p style={{ marginBottom: '30px' }}>
-					{graphic.description.description}
-				</p>
-				<div
-					style={{
-						display             : 'grid',
-						gridTemplateColumns : '1fr',
-						gridGap             : '30px'
-					}}
-				>
-					{imagesFull}
-				</div>
-				<div
-					style={{
-						display             : 'grid',
-						gridTemplateColumns : '1fr 1fr',
-						gridGap             : '30px'
-					}}
-				>
-					{imagesHalf}
-				</div>
-			</ContentContainer>
-		</Layout>
-	);
-};
 
 export default GraphicDesignTemplate;

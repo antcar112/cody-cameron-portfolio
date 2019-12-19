@@ -106,7 +106,12 @@ const ContactForm = () => (
 		</FormGroup>
 		<Btn
 			type="submit"
-			style={{ display: 'block', width: '100%', fontSize: '16px' }}
+			style={{
+				display  : 'block',
+				width    : '100%',
+				fontSize : '16px',
+				padding  : '15px'
+			}}
 		>
 			Send Message
 		</Btn>

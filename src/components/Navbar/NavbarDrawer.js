@@ -13,11 +13,11 @@ const NavDrawer = styled.nav`
 	bottom: 0;
 	background-color: ${props => props.theme.color.lightGrey};
 	z-index: 5;
-	width: 340px;
+	width: 300px;
 	transition: transform ${props => props.theme.transition};
 	display: none;
 
-	transform: ${props => props.show && 'translate(340px, 0)'};
+	transform: ${props => props.show && 'translate(300px, 0)'};
 
 	${media.down.lg} {
 		display: block;

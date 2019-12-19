@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { media } from '../../utils/media';
 
 const NavStyles = css`
 	& li {
@@ -69,11 +70,16 @@ const FooterStyles = css`
 			font-size: 1.7em;
 			padding: 0.5em 1em;
 			margin: 0 5px;
+
+			${media.down.xs} {
+				font-size: 1.5em;
+			}
 		}
 	}
 `;
 
 const ContactPageStyles = css`
+	width: 100%;
 	& li {
 		display: flex;
 		justify-content: center;
@@ -85,6 +91,13 @@ const ContactPageStyles = css`
 			font-size: 2.2em;
 			padding: 0.5em 1em;
 			margin: 0;
+
+			${media.down.sm} {
+				font-size: 1.8em;
+			}
+			${media.down.xs} {
+				font-size: 1.5em;
+			}
 		}
 	}
 `;
