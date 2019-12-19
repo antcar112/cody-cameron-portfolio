@@ -78,6 +78,7 @@ const ContactForm = () => (
 			<FormControl
 				type="name"
 				id="name"
+				name="name"
 				aria-describedby="name"
 				placeholder="Enter your name"
 			/>
@@ -87,6 +88,7 @@ const ContactForm = () => (
 			<FormControl
 				type="email"
 				id="email"
+				name="email"
 				aria-describedby="email"
 				placeholder="Enter your email address"
 			/>
@@ -96,6 +98,7 @@ const ContactForm = () => (
 			<FormControl
 				type="subject"
 				id="subject"
+				name="subject"
 				aria-describedby="subject"
 				placeholder="Enter your email subject"
 			/>
@@ -105,6 +108,7 @@ const ContactForm = () => (
 			<label htmlFor="message">Message:</label>
 			<FormTextArea
 				id="message"
+				name="message"
 				rows="5"
 				placeholder="Enter your message"
 			/>
