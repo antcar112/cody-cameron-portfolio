@@ -23,23 +23,23 @@ const navLinks = [
 	},
 	{
 		title : 'Shed Designs',
-		path  : '/shed-designs'
+		path  : '/shed-designs/'
 	},
 	{
 		title : 'Motion Graphics',
-		path  : '/motion-graphics'
+		path  : '/motion-graphics/'
 	},
 	{
 		title : 'Graphic Design',
-		path  : '/graphic-design'
+		path  : '/graphic-design/'
 	},
 	{
 		title : 'About',
-		path  : '/about'
+		path  : '/about/'
 	},
 	{
 		title : 'Contact',
-		path  : '/contact'
+		path  : '/contact/'
 	}
 ];
 

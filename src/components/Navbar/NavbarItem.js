@@ -18,7 +18,12 @@ const NavItem = styled.li`
 const NavbarItem = ({ link, view }) => {
 	return (
 		<NavItem view={view}>
-			<NavbarLink to={link.path} view={view} activeClassName="activeNav">
+			<NavbarLink
+				to={link.path}
+				view={view}
+				activeClassName="activeNav"
+				partiallyActive={link.path === '/' ? false : true}
+			>
 				{link.title}
 			</NavbarLink>
 		</NavItem>
