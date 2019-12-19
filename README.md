@@ -1,5 +1,5 @@
 # Cody Cameron - Artist Portfolio Website
-This is a portfolio website made for artist Cody Cameron. It was developed using the (JAMstack)[https://jamstack.org/].
+This is a portfolio website made for artist Cody Cameron. It was developed using the [JAMstack](https://jamstack.org/).
 
 ## Hosting
 The site is hosted publicly at https://eloquent-wozniak-860d04.netlify.com/.
