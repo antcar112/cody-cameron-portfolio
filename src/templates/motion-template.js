@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import { media } from '../utils/media';
+import scrollSettings from '../utils/scrollSettings';
 
 import Head from '../components/Head/Head';
 import Layout from '../components/layout';
@@ -44,6 +45,8 @@ const MotionTemplate = ({ data }) => {
 						style={{ width: '100%' }}
 						controls
 						muted
+						data-sal={scrollSettings.animation}
+						data-sal-duration={scrollSettings.duration}
 					/>
 
 					<SectionSubtitle>{video.title}</SectionSubtitle>
@@ -59,7 +62,13 @@ const MotionTemplate = ({ data }) => {
 					style={{ marginBottom: '15px', width: '100%' }}
 					key={gif.title}
 				>
-					<Gif src={gif.file.url} alt={gif.title} />
+					<Gif
+						src={gif.file.url}
+						alt={gif.title}
+						data-sal={scrollSettings.animation}
+						data-sal-duration={scrollSettings.duration}
+						data-sal-delay={scrollSettings.delay}
+					/>
 				</div>
 			);
 		});

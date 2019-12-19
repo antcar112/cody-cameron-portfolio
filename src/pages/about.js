@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import { media } from '../utils/media';
+import scrollSettings from '../utils/scrollSettings';
 
 import Head from '../components/Head/Head';
 import Layout from '../components/layout';
@@ -38,6 +39,8 @@ export default ({ data }) => (
 					src={standingStreet}
 					alt="Standing in the street with shoes."
 					style={{ width: '100%' }}
+					data-sal={scrollSettings.animation}
+					data-sal-duration={scrollSettings.duration}
 				/>
 			</ImageContainer>
 			<AboutPara>
@@ -61,7 +64,12 @@ export default ({ data }) => (
 				voluptatem sequi!
 			</AboutPara>
 			<ImageContainer>
-				<img src={nike} alt="Nikes and a hat." />
+				<img
+					src={nike}
+					alt="Nikes and a hat."
+					data-sal={scrollSettings.animation}
+					data-sal-duration={scrollSettings.duration}
+				/>
 			</ImageContainer>
 		</ContentContainer>
 	</Layout>

@@ -1,7 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import ContentContainer from '../../components/ContentContainer/ContentContainer';
+
 import { media } from '../../utils/media';
+import scrollSettings from '../../utils/scrollSettings';
+
+import ContentContainer from '../../components/ContentContainer/ContentContainer';
 import {
 	SectionTitle,
 	SectionSubtitle,
@@ -126,6 +129,8 @@ const ShedDesignsAbout = ({ content }) => (
 					className="collage-image"
 					src={collage}
 					alt="collage of logos"
+					data-sal={scrollSettings.animation}
+					data-sal-duration={scrollSettings.duration}
 				/>
 				<ul className="about-list">
 					{content.map(c => <li key={c.id}>{c.title}</li>)}
@@ -134,8 +139,16 @@ const ShedDesignsAbout = ({ content }) => (
 					className="stairs-image"
 					src={stairs}
 					alt="shoes on stairs"
+					data-sal={scrollSettings.animation}
+					data-sal-duration={scrollSettings.duration}
 				/>
-				<img className="face-image" src={face} alt="shoes held up" />
+				<img
+					className="face-image"
+					src={face}
+					alt="shoes held up"
+					data-sal={scrollSettings.animation}
+					data-sal-duration={scrollSettings.duration}
+				/>
 			</GridContainer>
 		</ContentContainer>
 	</OuterContainer>

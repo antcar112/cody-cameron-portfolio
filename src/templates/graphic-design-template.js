@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import styled from 'styled-components';
 
 import { media } from '../utils/media';
+import scrollSettings from '../utils/scrollSettings';
 
 import Head from '../components/Head/Head';
 import Layout from '../components/layout';
@@ -40,7 +41,12 @@ const GraphicDesignTemplate = ({ data }) => {
 		imagesFull = graphic.imagesFullWidth.map(image => {
 			return (
 				<ImageContainer key={image.title}>
-					<Image src={image.file.url} alt={image.title} />
+					<Image
+						src={image.file.url}
+						alt={image.title}
+						data-sal={scrollSettings.animation}
+						data-sal-duration={scrollSettings.duration}
+					/>
 					<SectionSubtitle>{image.title}</SectionSubtitle>
 				</ImageContainer>
 			);
@@ -51,7 +57,12 @@ const GraphicDesignTemplate = ({ data }) => {
 		imagesHalf = graphic.images.map(image => {
 			return (
 				<ImageContainer key={image.title}>
-					<Image src={image.file.url} alt={image.title} />
+					<Image
+						src={image.file.url}
+						alt={image.title}
+						data-sal={scrollSettings.animation}
+						data-sal-duration={scrollSettings.duration}
+					/>
 					<SectionSubtitle>{image.title}</SectionSubtitle>
 				</ImageContainer>
 			);
