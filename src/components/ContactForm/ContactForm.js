@@ -67,7 +67,7 @@ const ContactForm = () => (
 			margin   : 'auto',
 			padding  : '10px'
 		}}
-		name="email"
+		name="emailForm"
 		method="POST"
 		data-netlify="true"
 		netlify-honeypot="bot-field"
