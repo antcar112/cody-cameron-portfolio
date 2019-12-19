@@ -39,7 +39,7 @@ const GraphicDesignTemplate = ({ data }) => {
 	if (graphic.imagesFullWidth) {
 		imagesFull = graphic.imagesFullWidth.map(image => {
 			return (
-				<ImageContainer>
+				<ImageContainer key={image.title}>
 					<Image src={image.file.url} alt={image.title} />
 					<SectionSubtitle>{image.title}</SectionSubtitle>
 				</ImageContainer>
@@ -50,7 +50,7 @@ const GraphicDesignTemplate = ({ data }) => {
 	if (graphic.images) {
 		imagesHalf = graphic.images.map(image => {
 			return (
-				<ImageContainer>
+				<ImageContainer key={image.title}>
 					<Image src={image.file.url} alt={image.title} />
 					<SectionSubtitle>{image.title}</SectionSubtitle>
 				</ImageContainer>

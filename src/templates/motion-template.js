@@ -38,7 +38,7 @@ const MotionTemplate = ({ data }) => {
 	if (motion.videos) {
 		videos = motion.videos.map(video => {
 			return (
-				<div style={{ marginBottom: '60px' }}>
+				<div style={{ marginBottom: '60px' }} key={video.title}>
 					<video
 						src={video.file.url}
 						style={{ width: '100%' }}
@@ -55,7 +55,10 @@ const MotionTemplate = ({ data }) => {
 	if (motion.gifs) {
 		gifs = motion.gifs.map(gif => {
 			return (
-				<div style={{ marginBottom: '15px', width: '100%' }}>
+				<div
+					style={{ marginBottom: '15px', width: '100%' }}
+					key={gif.title}
+				>
 					<Gif src={gif.file.url} alt={gif.title} />
 				</div>
 			);
@@ -90,6 +93,7 @@ export const query = graphql`
 				}
 			}
 			gifs {
+				title
 				file {
 					url
 				}

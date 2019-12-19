@@ -27,30 +27,25 @@ const Footer = ({ insta }) => {
 	// Go here for access token https://instagram.pixelunion.net/
 	const INSTA_URL = `https://api.instagram.com/v1/users/self/media/recent/?access_token=${insta}`;
 
-	useEffect(
-		() => {
-			const fetchPhotos = async () => {
-				let res = await axios.get(INSTA_URL);
-				let resData = res.data.data;
-				let photos = resData.map(p => {
-					const photo = {
-						id      : p.id,
-						caption : p.caption ? p.caption.text : '',
-						image   : p.images.low_resolution.url,
-						url     : p.link
-					};
-					return photo;
-				});
+	useEffect(() => {
+		const fetchPhotos = async () => {
+			let res = await axios.get(INSTA_URL);
+			let resData = res.data.data;
+			let photos = resData.map(p => {
+				const photo = {
+					id      : p.id,
+					caption : p.caption ? p.caption.text : '',
+					image   : p.images.low_resolution.url,
+					url     : p.link
+				};
+				return photo;
+			});
 
-				setPhotos(photos);
-				setLoading(false);
-			};
-			fetchPhotos();
-		},
-		[
-			INSTA_URL
-		]
-	);
+			setPhotos(photos);
+			setLoading(false);
+		};
+		fetchPhotos();
+	}, []);
 	return (
 		<FooterContainer>
 			{loading ? (

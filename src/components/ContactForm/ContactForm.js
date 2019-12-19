@@ -67,7 +67,12 @@ const ContactForm = () => (
 			margin   : 'auto',
 			padding  : '10px'
 		}}
+		name="email"
+		method="POST"
+		data-netlify="true"
+		netlify-honeypot="bot-field"
 	>
+		<input type="hidden" name="bot-field" />
 		<FormGroup>
 			<label htmlFor="name">Name:</label>
 			<FormControl

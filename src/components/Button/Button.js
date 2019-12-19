@@ -47,5 +47,6 @@ export const BtnInnerLink = styled(Link)`${SharedStyles};`;
 
 export const Btn = styled.button`
 	border: none;
+	cursor: pointer;
 	${SharedStyles};
 `;
