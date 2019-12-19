@@ -5,7 +5,6 @@ import styled from 'styled-components';
 import { media } from '../utils/media';
 import scrollSettings from '../utils/scrollSettings';
 
-import Head from '../components/Head/Head';
 import Layout from '../components/layout';
 import ContentContainer from '../components/ContentContainer/ContentContainer';
 import PageHeader from '../components/PageHeader/PageHeader';
@@ -30,8 +29,7 @@ const ImageContainer = styled.div`
 `;
 
 export default ({ data }) => (
-	<Layout insta={data.site.siteMetadata.instaAPI}>
-		<Head>About</Head>
+	<Layout insta={data.site.siteMetadata.instaAPI} pageName="About">
 		<PageHeader title="About" headerImage={granville} />
 		<ContentContainer>
 			<ImageContainer>

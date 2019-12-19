@@ -5,10 +5,10 @@ import styled from 'styled-components';
 import { media } from '../utils/media';
 import scrollSettings from '../utils/scrollSettings';
 
-import Head from '../components/Head/Head';
 import Layout from '../components/layout';
 import ContentContainer from '../components/ContentContainer/ContentContainer';
 import { SectionTitle, SectionSubtitle } from '../components/Text/Text';
+import { BtnInnerLink } from '../components/Button/Button';
 
 const Desc = styled.p`
 	margin: 0 0 30px;
@@ -74,16 +74,24 @@ const MotionTemplate = ({ data }) => {
 		});
 	}
 	return (
-		<Layout insta={data.site.siteMetadata.instaAPI}>
-			<Head>{motion.title}</Head>
+		<Layout insta={data.site.siteMetadata.instaAPI} pageName={motion.title}>
 			<ContentContainer>
+				<BtnInnerLink to="/motion-graphics/">Back</BtnInnerLink>
 				<SectionTitle style={{ marginBottom: '26px' }}>
 					{motion.title}
 				</SectionTitle>
 				<Desc>{motion.description.description}</Desc>
 				{videos}
 			</ContentContainer>
-			<div style={{ marginBottom: '60px', width: '100%' }}>{gifs}</div>
+			<div style={{ width: '100%' }}>{gifs}</div>
+			<ContentContainer>
+				<BtnInnerLink
+					to="/motion-graphics/"
+					style={{ display: 'block', margin: '20px auto' }}
+				>
+					Back
+				</BtnInnerLink>
+			</ContentContainer>
 		</Layout>
 	);
 };

@@ -5,10 +5,10 @@ import styled from 'styled-components';
 import { media } from '../utils/media';
 import scrollSettings from '../utils/scrollSettings';
 
-import Head from '../components/Head/Head';
 import Layout from '../components/layout';
 import ContentContainer from '../components/ContentContainer/ContentContainer';
 import { SectionTitle, SectionSubtitle } from '../components/Text/Text';
+import { BtnInnerLink } from '../components/Button/Button';
 
 const Desc = styled.p`
 	margin: 0 0 30px;
@@ -17,7 +17,7 @@ const Desc = styled.p`
 	}
 `;
 
-const ImageContainer = styled.div`marginBottom: '60px';`;
+const ImageContainer = styled.div`margin-bottom: '60px';`;
 const Image = styled.img`width: 100%;`;
 const ImagesFull = styled.div`
 	display: grid;
@@ -42,7 +42,7 @@ const GraphicDesignTemplate = ({ data }) => {
 			return (
 				<ImageContainer key={image.title}>
 					<Image
-						src={image.file.url}
+						src={`${image.file.url}?w=1300`}
 						alt={image.title}
 						data-sal={scrollSettings.animation}
 						data-sal-duration={scrollSettings.duration}
@@ -58,7 +58,7 @@ const GraphicDesignTemplate = ({ data }) => {
 			return (
 				<ImageContainer key={image.title}>
 					<Image
-						src={image.file.url}
+						src={`${image.file.url}?w=700`}
 						alt={image.title}
 						data-sal={scrollSettings.animation}
 						data-sal-duration={scrollSettings.duration}
@@ -69,15 +69,24 @@ const GraphicDesignTemplate = ({ data }) => {
 		});
 	}
 	return (
-		<Layout insta={data.site.siteMetadata.instaAPI}>
-			<Head>{graphic.title}</Head>
+		<Layout
+			insta={data.site.siteMetadata.instaAPI}
+			pageName={graphic.title}
+		>
 			<ContentContainer>
+				<BtnInnerLink to="/graphic-design/">Back</BtnInnerLink>
 				<SectionTitle style={{ marginBottom: '26px' }}>
 					{graphic.title}
 				</SectionTitle>
 				<Desc>{graphic.description.description}</Desc>
 				<ImagesFull>{imagesFull}</ImagesFull>
 				<ImagesHalf>{imagesHalf}</ImagesHalf>
+				<BtnInnerLink
+					to="/graphic-design/"
+					style={{ display: 'block', margin: '20px auto' }}
+				>
+					Back
+				</BtnInnerLink>
 			</ContentContainer>
 		</Layout>
 	);
