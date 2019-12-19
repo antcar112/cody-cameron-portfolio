@@ -58,6 +58,9 @@ typings/
 .cache/
 public
 
+# VS code Settings
+.vscode/
+
 # Mac files
 .DS_Store
 
@@ -68,5 +71,4 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-# VS code Settings
-.vscode/
+
