@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { MdMenu } from 'react-icons/md';
 import { Link } from 'gatsby';
-import { media } from '../../utils/media';
 
+import { media } from '../../utils/media';
 import SocialList from '../SocialMedia/SocialList';
 import NavbarList from './NavbarList';
 
@@ -48,7 +48,7 @@ const NavbarHamburger = styled.button`
 		font-size: 2.3rem;
 		color: ${props => props.theme.color.white};
 		transition: color ${props => props.theme.transition};
-		${media.down.xs} {
+		${media.down.sm} {
 			font-size: 2em;
 		}
 	}
@@ -62,7 +62,7 @@ const LogoContainer = styled.div`
 		font-family: ${props => props.theme.font.cursive};
 		font-size: 1.7em;
 		transition: color ${props => props.theme.transition};
-		${media.down.xs} {
+		${media.down.sm} {
 			font-size: 1.3em;
 		}
 

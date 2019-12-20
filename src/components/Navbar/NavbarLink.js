@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 const mobileLinkStyles = css`
 	color: ${props => props.theme.color.black};
 	width: 100%;
-	padding: 1.4rem 0;
+	padding: 1.2rem 0;
 	position: relative;
 
 	&:hover,

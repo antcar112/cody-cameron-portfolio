@@ -12,13 +12,13 @@ const NavDrawer = styled.nav`
 	position: fixed;
 	right: 100%;
 	top: 0;
-	bottom: 0;
+	height: 100vh;
 	background-color: ${props => props.theme.color.lightGrey};
 	z-index: 5;
-	width: 300px;
+	width: 280px;
 	transition: transform ${props => props.theme.transition};
 	display: none;
-	transform: ${props => props.show && 'translate(300px, 0)'};
+	transform: ${props => props.show && 'translate(280px, 0)'};
 
 	${media.down.lg} {
 		display: block;
@@ -58,7 +58,7 @@ const DrawerTopContainer = styled.div`
 const DrawerMainContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	/* justify-content: space-between; */
 	height: calc(100vh - ${props => props.theme.navHeight});
 `;
 

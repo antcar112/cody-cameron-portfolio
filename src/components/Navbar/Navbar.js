@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+import { media } from '../../utils/media';
+
 import NavbarOuterContainer from './NavbarOuterContainer';
 import NavbarDrawer from './NavbarDrawer';
 import FullPageBackground from './FullPageBackground';
@@ -14,12 +16,16 @@ const Nav = styled.nav`
 	width: 100%;
 	z-index: 10;
 	box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+
+	${media.down.sm} {
+		height: ${props => props.theme.navHeightMobile};
+	}
 `;
 
 const Navbar = () => {
 	let [
 		showDrawer,
-		setShowDrawer
+		setShowDrawer,
 	] = useState(false);
 
 	function toggleDrawer() {

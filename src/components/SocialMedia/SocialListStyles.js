@@ -41,13 +41,14 @@ const NavDrawerStyles = css`
 		display: flex;
 		width: 100%;
 		text-align: center;
+		border-bottom: ${props => props.theme.navDrawerBorder};
 
 		& a {
 			color: ${props => props.theme.color.black};
-			font-size: 1.5em;
+			font-size: 1.15em;
 			display: block;
 			width: 100%;
-			padding: 1.5rem 0;
+			padding: 1.3rem 0;
 
 			&:hover,
 			&:active,

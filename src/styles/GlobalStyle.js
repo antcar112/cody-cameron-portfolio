@@ -1,5 +1,7 @@
 import { createGlobalStyle } from 'styled-components';
 
+import { media } from '../utils/media';
+
 export default createGlobalStyle`
 /* Fonts */
 /* sans-serif */
@@ -35,6 +37,10 @@ body {
 
 main {
   padding-top: 60px;
+
+  ${media.down.sm} {
+		padding-top: ${props => props.theme.navHeightMobile};
+	}
 }
 
 h1,

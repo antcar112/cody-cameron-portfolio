@@ -3,9 +3,10 @@ import styled from 'styled-components';
 
 const Background = styled.div`
 	top: 0;
-	bottom: 0;
+	bottom: -100;
 	right: 0;
 	left: 0;
+	min-height: 100vh;
 	background-color: ${props => props.theme.color.black};
 	transition: opacity ${props => props.theme.transition};
 	position: fixed;
