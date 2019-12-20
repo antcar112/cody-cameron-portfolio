@@ -3,7 +3,7 @@ import {
 	CarouselItem,
 	CarouselLink,
 	CarouselText,
-	CarouselLogo
+	CarouselLogo,
 } from './FooterCarouselItemStyles';
 import { IoLogoInstagram } from 'react-icons/io';
 

@@ -22,26 +22,12 @@ const Fig = styled.figure`
 	}
 `;
 
-const FigCap = styled.figcaption`
-	display: none;
-	padding: 5px 0 10px;
-	font-size: 20px;
-	text-align: center;
-	text-decoration: none;
-	color: black;
-
-	${media.down.md} {
-		display: block;
-	}
-`;
-
 const ImageDiv = styled.div`
 	width: 100%;
-
 	height: 100%;
-
 	transition: transform 150ms ease-in;
 `;
+
 const TextDiv = styled.div`
 	background-color: rgba(0, 0, 0, 0.7);
 	width: 100%;
@@ -52,19 +38,35 @@ const TextDiv = styled.div`
 	transform: translateY(100%);
 	transition: transform 150ms linear;
 
+	${media.down.md} {
+		transform: translateY(0);
+	}
+
 	& .title-div {
 		width: 80%;
-		height: 100%;
+		height: 50%;
 		display: flex;
-		justify-content: center;
+		flex-direction: column;
+		justify-content: space-between;
 		align-items: center;
-		margin: 0 auto;
+		margin: 40% auto 10%;
+
+		${media.down.md} {
+			margin: 20% auto;
+			height: 60%;
+		}
 
 		& h1 {
 			color: white;
 			font-family: ${props => props.theme.font.cursive};
 			text-align: center;
 			font-size: 2em;
+		}
+
+		& span {
+			color: white;
+			font-family: ${props => props.theme.font.body};
+			margin-top: 3em;
 		}
 	}
 `;
@@ -78,6 +80,7 @@ const HoverFigureLink = ({ content, parentPage }) => (
 			<TextDiv className="text-div">
 				<div className="title-div">
 					<h1>{content.title}</h1>
+					<span>+ See More</span>
 				</div>
 			</TextDiv>
 			<ImageDiv className="image-div">
@@ -87,7 +90,6 @@ const HoverFigureLink = ({ content, parentPage }) => (
 				/>
 			</ImageDiv>
 		</Fig>
-		<FigCap>{content.title}</FigCap>
 	</Link>
 );
 
