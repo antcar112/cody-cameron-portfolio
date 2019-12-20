@@ -3,7 +3,7 @@ import { MdKeyboardArrowDown } from 'react-icons/md';
 import {
 	HeroContainer,
 	HeroTitleWrapper,
-	HeroScrollWrapper
+	HeroScrollWrapper,
 } from './HeroStyles.js';
 
 const Hero = () => (
@@ -19,9 +19,8 @@ const Hero = () => (
 );
 
 const scrollDown = () => {
-	window.scrollTo({
-		top      : window.innerHeight - 60,
-		behavior : 'smooth'
+	document.getElementById('scroll-target').scrollIntoView({
+		behavior : 'smooth',
 	});
 };
 

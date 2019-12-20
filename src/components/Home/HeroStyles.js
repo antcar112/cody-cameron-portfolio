@@ -6,16 +6,21 @@ export const HeroContainer = styled.div`
 	background-image: url(${homeCover});
 	width: 100%;
 	height: calc(100vh - ${props => props.theme.navHeight});
+
 	color: ${props => props.theme.color.white};
 	background-repeat: no-repeat;
 	background-position: center top;
 	background-size: cover;
 	background-attachment: fixed;
 	overflow: hidden;
+
+	${media.down.sm} {
+		height: calc(100vh - ${props => props.theme.navHeightMobile});
+	}
 `;
 
 export const HeroTitleWrapper = styled.div`
-	height: 85%;
+	height: 90%;
 	width: 80%;
 	margin: 0 auto;
 	display: flex;
@@ -38,6 +43,7 @@ export const HeroTitleWrapper = styled.div`
 	}
 
 	${media.down.lg} {
+		height: 80%;
 		& h1 {
 			font-size: 5em;
 			margin-bottom: 16px;
@@ -49,6 +55,7 @@ export const HeroTitleWrapper = styled.div`
 	}
 
 	${media.down.sm} {
+		height: 75%;
 		& h1 {
 			font-size: 4em;
 			margin-bottom: 8px;

@@ -9,6 +9,11 @@ const PortfolioList = styled.article`
 	background-color: ${props => props.theme.color.lightGrey};
 `;
 
+const ScrollTarget = styled.div`
+	position: relative;
+	top: -52px;
+`;
+
 const HomePortfolioList = () => {
 	const sections = homePortfolio.map((item, index) => (
 		<HomePortfolioItem section={item} key={item.id} index={index + 1} />
@@ -16,6 +21,7 @@ const HomePortfolioList = () => {
 
 	return (
 		<PortfolioList>
+			<ScrollTarget id="scroll-target" />
 			<ContentContainer>{sections}</ContentContainer>
 		</PortfolioList>
 	);
