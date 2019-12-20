@@ -16,6 +16,6 @@ export default {
 	},
 	transition      : '250ms ease-in-out',
 	navHeight       : '60px',
-	navHeightMobile : '48px',
+	navHeightMobile : '52px',
 	navDrawerBorder : '1px solid rgba(0,0,0,0.1)',
 };
