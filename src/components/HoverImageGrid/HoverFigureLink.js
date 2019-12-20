@@ -44,29 +44,33 @@ const TextDiv = styled.div`
 
 	& .title-div {
 		width: 80%;
-		height: 50%;
+		height: 100%;
 		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: center;
-		margin: 40% auto 10%;
-
-		${media.down.md} {
-			margin: 20% auto;
-			height: 60%;
-		}
+		margin: 0 auto;
 
 		& h1 {
 			color: white;
 			font-family: ${props => props.theme.font.cursive};
 			text-align: center;
 			font-size: 2em;
+
+			${media.down.sm} {
+				font-size: 1.8em;
+			}
+
+			${media.down.xs} {
+				font-size: 2em;
+			}
 		}
 
 		& span {
 			color: white;
 			font-family: ${props => props.theme.font.body};
-			margin-top: 3em;
+			position: absolute;
+			bottom: 8%;
+			font-weight: 700;
 		}
 	}
 `;
