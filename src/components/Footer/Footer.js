@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import FooterCarousel from './FooterCarousel';
 import SpinnerContainer from '../Spinner/SpinnerContainer';
 import SocialList from '../SocialMedia/SocialList';
+import InstagramHeader from './InstagramHeader';
 import FooterCopyright from './FooterCopyright';
 
 const FooterContainer = styled.footer`
@@ -17,11 +18,11 @@ const FooterContainer = styled.footer`
 const Footer = ({ insta }) => {
 	let [
 		photos,
-		setPhotos
+		setPhotos,
 	] = useState([]);
 	let [
 		loading,
-		setLoading
+		setLoading,
 	] = useState(true);
 
 	// Go here for access token https://instagram.pixelunion.net/
@@ -36,7 +37,7 @@ const Footer = ({ insta }) => {
 					id      : p.id,
 					caption : p.caption ? p.caption.text : '',
 					image   : p.images.low_resolution.url,
-					url     : p.link
+					url     : p.link,
 				};
 				return photo;
 			});
@@ -48,6 +49,7 @@ const Footer = ({ insta }) => {
 	}, []);
 	return (
 		<FooterContainer>
+			<InstagramHeader />
 			{loading ? (
 				<SpinnerContainer lightSpinner />
 			) : (

@@ -8,7 +8,7 @@ import scrollSettings from '../utils/scrollSettings';
 import Layout from '../components/layout';
 import ContentContainer from '../components/ContentContainer/ContentContainer';
 import { SectionTitle, SectionSubtitle } from '../components/Text/Text';
-import { BtnInnerLink } from '../components/Button/Button';
+import { BackBtn, BackBtnFull } from '../components/Button/Button';
 
 const Desc = styled.p`
 	margin: 0 0 30px;
@@ -74,19 +74,14 @@ const GraphicDesignTemplate = ({ data }) => {
 			pageName={graphic.title}
 		>
 			<ContentContainer>
-				<BtnInnerLink to="/graphic-design/">Back</BtnInnerLink>
+				<BackBtn to="/graphic-design/">Back</BackBtn>
 				<SectionTitle style={{ marginBottom: '26px' }}>
 					{graphic.title}
 				</SectionTitle>
 				<Desc>{graphic.description.description}</Desc>
 				<ImagesFull>{imagesFull}</ImagesFull>
 				<ImagesHalf>{imagesHalf}</ImagesHalf>
-				<BtnInnerLink
-					to="/graphic-design/"
-					style={{ display: 'block', margin: '20px auto' }}
-				>
-					Back
-				</BtnInnerLink>
+				<BackBtnFull to="/graphic-design/">Back</BackBtnFull>
 			</ContentContainer>
 		</Layout>
 	);

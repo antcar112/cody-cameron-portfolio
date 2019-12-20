@@ -33,11 +33,12 @@ export default styled.section`
 	& h1 {
 		text-align: left;
 		grid-area: portfolioTitle;
+		margin-bottom: 25px;
 	}
 
 	& h2 {
 		text-align: left;
-		margin: 15px 0;
+		margin: 0 0 25px;
 		grid-area: portfolioSubtitle;
 	}
 
@@ -69,10 +70,10 @@ export default styled.section`
 
 		& h2 {
 			text-align: center;
-			margin: 15px 0 40px;
+			margin: 0px 0 30px;
 		}
 		& p {
-			margin: 30px 15px 40px;
+			margin: 40px 15px 40px;
 		}
 		& a {
 			margin: 0 10px;

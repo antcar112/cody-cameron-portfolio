@@ -1,5 +1,7 @@
-import styled, { css } from 'styled-components';
 import { Link } from 'gatsby';
+import styled, { css } from 'styled-components';
+
+import { media } from '../../utils/media';
 
 const SharedStyles = css`
 	background-color: ${props => props.theme.color.black};
@@ -44,6 +46,20 @@ const SharedStyles = css`
 export const BtnLink = styled.a`${SharedStyles};`;
 
 export const BtnInnerLink = styled(Link)`${SharedStyles};`;
+
+export const BackBtn = styled(Link)`
+	${SharedStyles};
+	${media.down.md} {
+		display: inline-block;
+		margin: -30px 20px 20px;
+	}
+`;
+
+export const BackBtnFull = styled(Link)`
+	${SharedStyles};
+	display: block;
+	margin: 20px auto;
+`;
 
 export const Btn = styled.button`
 	border: none;

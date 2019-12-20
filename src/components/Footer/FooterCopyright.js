@@ -13,6 +13,10 @@ const Copyright = styled.div`
 	display: flex;
 	justify-content: space-between;
 
+	& a {
+		color: rgba(238, 238, 238, 0.65);
+	}
+
 	${media.down.sm} {
 		flex-direction: column;
 		font-size: 12px;
@@ -29,7 +33,10 @@ const FooterCopyright = () => {
 	return (
 		<Copyright>
 			<span>&copy; {year} Cody Cameron - Graphic Designer</span>
-			<span>Site Developed by Anthony Caron</span>
+			<span>
+				Site Developed by{' '}
+				<a href="https://github.com/antcar112">Anthony Caron</a>
+			</span>
 		</Copyright>
 	);
 };

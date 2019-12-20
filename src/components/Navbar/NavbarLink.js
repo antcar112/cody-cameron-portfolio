@@ -68,7 +68,7 @@ const desktopLinkStyles = css`
 `;
 
 export default styled(Link)`
-		text-transform: lowercase;
+		/* text-transform: lowercase; */
 		text-decoration: none;
 		font-size: 16px;
 		transition: background-color ${props => props.theme.transition},
