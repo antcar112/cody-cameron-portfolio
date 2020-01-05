@@ -2,7 +2,7 @@
   <img alt="Logo" src="./src/images/readme/logo.png" width="100" />
 </div>
 
-# Cody Cameron - Artist Portfolio Website
+<h1 align="center">Cody Cameron - Artist Portfolio Website</h1>
 
 This is a portfolio website made for artist Cody Cameron. It was developed using the [JAMstack](https://jamstack.org/).
 
