@@ -1,10 +1,10 @@
 # Cody Cameron - Artist Portfolio Website
 This is a portfolio website made for artist Cody Cameron. It was developed using the [JAMstack](https://jamstack.org/).
 
-## Hosting
+## :cloud: Hosting
 The site is hosted publicly at https://eloquent-wozniak-860d04.netlify.com/.
 
-## Technologies Used
+## :hammer_and_wrench: Technologies Used
 The following tools were used to develop this project:
 * [React](https://reactjs.org/)
 * [GraphQL](https://graphql.org/)
@@ -16,5 +16,5 @@ The following tools were used to develop this project:
 * [React Alice Carousel](https://www.npmjs.com/package/react-alice-carousel)
 * [React Icons](https://react-icons.netlify.com/#/)
 
-## Contact
-Built by [Anthony Caron](https://github.com/antcar112) - Feel free to contact me. 
+## :wave: Contact
+Built by [Anthony Caron](https://github.com/antcar112) - Feel free to reach out and contact me if you have any questions. 
