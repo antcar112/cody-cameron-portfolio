@@ -12,7 +12,7 @@
 		"clean": "gatsby clean"
 	},
 	"dependencies": {
-		"axios": "^0.19.0",
+		"axios": "^0.21.1",
 		"babel-plugin-styled-components": "^1.10.6",
 		"gatsby": "^2.18.12",
 		"gatsby-plugin-react-helmet": "^3.1.18",
